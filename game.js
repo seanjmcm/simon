@@ -59,7 +59,7 @@ function checkAnswer(currentLevel){
 var kilo = true  ;  
 if (userClickedPattern[currentLevel] === gamePattern[currentLevel]) {
     console.log("success");
-    if (currentLevel == 6){
+    if (currentLevel == 3){
         playSound("sounds/winner.wav")
         $("body" ).addClass("winner");
         setTimeout( function () {
