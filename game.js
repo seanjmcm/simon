@@ -34,11 +34,13 @@ var userChosenColour ;
 
 $(".btn").click( function(e){
     userChosenColour= e.target.id;
-    console.log(userChosenColour);
-    userClickedPattern.push(userChosenColour);
-    playSound("sounds/"+userChosenColour+".mp3")
-    ainmatePress(userChosenColour);
-    checkAnswer(userClickedPattern.length-1)
+    if (userChosenColour != "zebra"){
+        console.log(userChosenColour);
+        userClickedPattern.push(userChosenColour);
+        playSound("sounds/"+userChosenColour+".mp3")
+        ainmatePress(userChosenColour);
+        checkAnswer(userClickedPattern.length-1)
+    }
 });
 
 function playSound(name){
