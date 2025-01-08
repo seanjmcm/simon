@@ -77,7 +77,7 @@ if (userClickedPattern[currentLevel] === gamePattern[currentLevel]) {
     setTimeout( function () {
         $("body" ).removeClass("game-over");
       }, 400);
-      $("h1").text("Game Over, Press Any Key to Restart "  );  
+      $("h1").text("Game Over," + " Press Any Key to Restart "  );  
       startOver();
       kilo =false;
 
