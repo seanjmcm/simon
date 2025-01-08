@@ -65,7 +65,7 @@ if (userClickedPattern[currentLevel] === gamePattern[currentLevel]) {
         setTimeout( function () {
             $("body" ).removeClass("winner");
         }, 6000);
-      $("h1").text("You are the Winner, Press Any Key to Restart "  );  
+      $("h1").text("You are the Winner, Press Any Key to Restart !"  );  
       startOver();
       kilo =false;
     }
