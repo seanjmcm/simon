@@ -59,38 +59,42 @@ function ainmatePress(currentColour){
 function checkAnswer(currentLevel){
 
 var kilo = true  ;  
-if (userClickedPattern[currentLevel] === gamePattern[currentLevel]) {
-    console.log("success");
-    if (currentLevel == 10){
-        playSound("sounds/winner.wav")
-        $("body" ).addClass("winner");
+
+if (userChosenColour != "zebra"){
+    
+    if (userClickedPattern[currentLevel] === gamePattern[currentLevel]) {
+        console.log("success");
+        if (currentLevel == 10){
+            playSound("sounds/winner.wav")
+            $("body" ).addClass("winner");
+            setTimeout( function () {
+                $("body" ).removeClass("winner");
+            }, 6000);
+          $("h1").text("You are the Winner, Press Any Key to Restart !"  );  
+          startOver();
+          kilo =false;
+        }
+    
+    }   else{
+        console.log("wrong");
+        playSound("sounds/wrong.mp3")
+        $("body" ).addClass("game-over");
         setTimeout( function () {
-            $("body" ).removeClass("winner");
-        }, 6000);
-      $("h1").text("You are the Winner, Press Any Key to Restart !"  );  
-      startOver();
-      kilo =false;
+            $("body" ).removeClass("game-over");
+          }, 400);
+          $("h1").text("Game Over," + " Press Any Key to Restart "  );  
+          startOver();
+          kilo =false;
+    
     }
-
-}   else{
-    console.log("wrong");
-    playSound("sounds/wrong.mp3")
-    $("body" ).addClass("game-over");
-    setTimeout( function () {
-        $("body" ).removeClass("game-over");
-      }, 400);
-      $("h1").text("Game Over," + " Press Any Key to Restart "  );  
-      startOver();
-      kilo =false;
-
-}
-
-if (userClickedPattern.length=== gamePattern.length && kilo === true){
-    setTimeout( function () {
-        nextSequence();
-      }, 500); 
-}
-
+    
+    if (userClickedPattern.length=== gamePattern.length && kilo === true){
+        setTimeout( function () {
+            nextSequence();
+          }, 500); 
+    }
+    
+    }
 }
 
 function startOver(){
