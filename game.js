@@ -7,13 +7,13 @@ var level=0;
 $(document).keydown(function(event){
 
     $("h1").text("glab " + level.toString() );
-    waitt(1000)
+    
     
     
     if (level ===0){
         $("h1").text("Level " + level.toString() );
         nextSequence();}
-        alert('VIDEO HAS STOPPED');
+        
     
 })
 
@@ -45,6 +45,13 @@ var userChosenColour ;
 
 $(".btn").click( function(e){
     userChosenColour= e.target.id;
+
+    if (userChosenColour != "zebra"){
+        if (level ===0){
+        $("h1").text("Level " + level.toString() );
+        nextSequence();}
+    }
+    
     if (userChosenColour != "zebra"){
         console.log(userChosenColour);
         userClickedPattern.push(userChosenColour);
