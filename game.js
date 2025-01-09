@@ -7,12 +7,23 @@ var level=0;
 $(document).keydown(function(event){
 
     $("h1").text("glab " + level.toString() );
+    waitt(1000)
+    
+    
     if (level ===0){
         $("h1").text("Level " + level.toString() );
         nextSequence();}
 
     
 })
+
+function waitt(ms){
+   var start = new Date().getTime();
+   var end = start;
+   while(end < start + ms) {
+     end = new Date().getTime();
+  }
+}
 
 
 function nextSequence(){
