@@ -13,7 +13,7 @@ $(document).keydown(function(event){
     if (level ===0){
         $("h1").text("Level " + level.toString() );
         nextSequence();}
-
+        alert('VIDEO HAS STOPPED');
     
 })
 
