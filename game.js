@@ -46,7 +46,7 @@ var userChosenColour ;
 $(".btn").click( function(e){
     userChosenColour= e.target.id;
 
-    if (userChosenColour != "zebra"){
+    if (userChosenColour == "zebra"){
         if (level ===0){
         $("h1").text("Level " + level.toString() );
         nextSequence();}
