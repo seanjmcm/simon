@@ -4,9 +4,9 @@ var userClickedPattern =[];
 var buttonColours  = ["red", "blue", "green", "yellow"];
 var level=0;
 
-$(document).keydown(function(){
+$(document).keydown(function(event){
 
-    
+    $("h1").text("glab " + level.toString() );
     if (level ===0){
         $("h1").text("Level " + level.toString() );
         nextSequence();}
@@ -70,7 +70,7 @@ if (userChosenColour != "zebra"){
             setTimeout( function () {
                 $("body" ).removeClass("winner");
             }, 6000);
-          $("h1").text("You are the Winner, Press Any Key to Restart !"  );  
+          $("h1").text("You are the Winner, Press Any Key or the Start Button to Restart !"  );  
           startOver();
           kilo =false;
         }
@@ -82,7 +82,7 @@ if (userChosenColour != "zebra"){
         setTimeout( function () {
             $("body" ).removeClass("game-over");
           }, 400);
-          $("h1").text("Game Over," + " Press Any Key to Restart "  );  
+          $("h1").text("Game Over," + " Press Any Key or the Start Button to Restart "  );  
           startOver();
           kilo =false;
     
